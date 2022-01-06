@@ -4,28 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose",
-    "server": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "start:test": "cross-env NODE_ENV=test node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",
-    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
-    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.5",
-    "mongoose-unique-validator": "^3.0.0",
     "nodemon": "^2.0.15"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "eslint": "^8.6.0",
-    "jest": "^27.4.5",
-    "supertest": "^6.1.6"
+    "jest": "^27.4.5"
   },
   "jest": {
     "testEnvironment": "node"
